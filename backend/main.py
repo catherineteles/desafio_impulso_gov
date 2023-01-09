@@ -23,3 +23,10 @@ async def fetch_data():
     results = await database.fetch_all(query=query)
 
     return  results
+
+@app.get("/{municipio_id}")
+async def fetch_data(municipio_id: int):
+    query = f"SELECT id_cnes, nome, latitude, longitude FROM estabelecimentos WHERE municipio_id_sus={municipio_id}"
+    results = await database.fetch_all(query=query)
+
+    return  results
