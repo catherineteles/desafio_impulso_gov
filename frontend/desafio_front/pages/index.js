@@ -1,73 +1,38 @@
 import Head from "next/head";
-// import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
-// import { InfoTab } from "@impulsogov/design-system";
+import { useContext } from "react";
+import { InfoTab } from "@impulsogov/design-system";
+import AppContext from "../context_api/AppContext";
+import Header from "../components/Header";
+import Modal from "../components/Modal";
 
-// import { HOME } from "../querys/HOME";
-// import { getData } from "../services/getData";
-
-// export async function getStaticProps() {
-//   const res = [
-//     await getData(HOME)
-//   ];
-
-//   return {
-//     props: {
-//       res: res
-//     }
-//   }
-// }
-
-export default function Home({res}) {
+export default function Home() {
+  const {
+    clicked
+  } = useContext(AppContext)
   return (
     <>
-    <div>Start</div>
-      {/* <div style={{ backgroundColor: "#1B2D82" }}>
-        <HomeBanner
-          titulo={res[0].homeBanners[0].title} texto={res[0].homeBanners[0].text} theme="ColorSM"
-        />
-
-        <ImagemFundo
-          imagem={res[0].assets[6].url}
-          chamada={res[0].homeBanners[1].title}
-          chamadacolor=""
-          subtexto={res[0].homeBanners[1].text}
-          cards={res[0].cards}
-          botao={
-            {
-              label: "",
-              url: ""
-            }
-          }
-        />
-        
+      <div>
         <section id="sobre">
+          <Header />
+          { clicked && <Modal />}
           <InfoTab contentList={[
-            {
-              leftTitle: res[0].infoTabs[0].leftTitle,
-              rightTitle: res[0].infoTabs[0].rigthTitle,
-              rightContent: res[0].infoTabs[0].content,
-              buttonTitle: res[0].infoTabs[0].buttonTitle,
-              buttonLink: res[0].infoTabs[0].link
+             {
+              buttonLink: '/',
+              buttonTitle: 'SOBRE SAÚDE MENTAL',
+              leftTitle: 'Saúde Mental',
+              rightContent: 'Uma plataforma gratuita, que utiliza bases de dados públicas para auxiliar na gestão dos serviços de saúde mental do município. Conheça mais sobre o trabalho realizado pela Impulso em parceria com o Instituto Cactus e o município de Aracaju (SE).',
+              rightTitle: 'O que é a plataforma de indicadores de Saúde Mental?'
             },
             {
-              leftTitle: res[0].infoTabs[1].leftTitle,
-              rightTitle: res[0].infoTabs[1].rigthTitle,
-              rightContent: res[0].infoTabs[1].content,
-              buttonTitle: res[0].infoTabs[1].buttonTitle,
-              buttonLink:res[0].infoTabs[1].link
-            },
+              buttonLink: '/2',
+              buttonTitle: 'entenda',
+              leftTitle: 'Glossário',
+              rightContent: 'Acesse um siglário e a ficha técnica de nossos indicadores para compreender como eles são calculados, quais são as bases de dados que os alimentam, com qual periodicidade eles são atualizados e muito mais',
+              rightTitle: 'Entenda como interpretar os indicadores'
+            }
           ]} />
         </section>
-
-        <Parcerias
-          parceiros={[
-            { alt: "parceiros", src:  res[0].logos[2].logo.url },
-            { alt: "parceiros", src: res[0].logos[5].logo.url },
-            { alt: "parceiros", src: res[0].logos[4].logo.url }
-          ]}
-          theme="ColorAGP"
-        />
-      </div> */}
+      </div>
 
     </>
   )
