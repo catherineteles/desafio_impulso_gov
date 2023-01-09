@@ -2,3 +2,4 @@ fastapi==0.85.2
 databases
 databases[aiosqlite]
 ipython
+uvicorn
