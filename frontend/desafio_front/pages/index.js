@@ -1,42 +1,27 @@
 import Head from "next/head";
-import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
+// import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
 import { InfoTab } from "@impulsogov/design-system";
 
-import { HOME } from "../querys/HOME";
-import { getData } from "../services/getData";
-
-export async function getStaticProps() {
-  const res = [
-    await getData(HOME)
-  ];
-
-  return {
-    props: {
-      res: res
-    }
-  }
-}
-
-export default function Home({res}) {
+export default function Home() {
   return (
     <>
       <div style={{ backgroundColor: "#1B2D82" }}>
         <section id="sobre">
           <InfoTab contentList={[
-            {
-              leftTitle: res[0].infoTabs[0].leftTitle,
-              rightTitle: res[0].infoTabs[0].rigthTitle,
-              rightContent: res[0].infoTabs[0].content,
-              buttonTitle: res[0].infoTabs[0].buttonTitle,
-              buttonLink: res[0].infoTabs[0].link
+             {
+              buttonLink: '/',
+              buttonTitle: 'SOBRE SAÚDE MENTAL',
+              leftTitle: 'Saúde Mental',
+              rightContent: 'Uma plataforma gratuita, que utiliza bases de dados públicas para auxiliar na gestão dos serviços de saúde mental do município. Conheça mais sobre o trabalho realizado pela Impulso em parceria com o Instituto Cactus e o município de Aracaju (SE).',
+              rightTitle: 'O que é a plataforma de indicadores de Saúde Mental?'
             },
             {
-              leftTitle: res[0].infoTabs[1].leftTitle,
-              rightTitle: res[0].infoTabs[1].rigthTitle,
-              rightContent: res[0].infoTabs[1].content,
-              buttonTitle: res[0].infoTabs[1].buttonTitle,
-              buttonLink:res[0].infoTabs[1].link
-            },
+              buttonLink: '/2',
+              buttonTitle: 'entenda',
+              leftTitle: 'Glossário',
+              rightContent: 'Acesse um siglário e a ficha técnica de nossos indicadores para compreender como eles são calculados, quais são as bases de dados que os alimentam, com qual periodicidade eles são atualizados e muito mais',
+              rightTitle: 'Entenda como interpretar os indicadores'
+            }
           ]} />
         </section>
       </div>
