@@ -1,14 +1,20 @@
 import Head from "next/head";
-// import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
+import { useContext } from "react";
 import { InfoTab } from "@impulsogov/design-system";
+import AppContext from "../context_api/AppContext";
 import Header from "../components/Header";
+import Modal from "../components/Modal";
 
 export default function Home() {
+  const {
+    clicked
+  } = useContext(AppContext)
   return (
     <>
       <div>
         <section id="sobre">
           <Header />
+          { clicked && <Modal />}
           <InfoTab contentList={[
              {
               buttonLink: '/',
