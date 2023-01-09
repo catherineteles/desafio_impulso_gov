@@ -1,45 +1,26 @@
 import Head from "next/head";
-// import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
-// import { InfoTab } from "@impulsogov/design-system";
+import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
+import { InfoTab } from "@impulsogov/design-system";
 
-// import { HOME } from "../querys/HOME";
-// import { getData } from "../services/getData";
+import { HOME } from "../querys/HOME";
+import { getData } from "../services/getData";
 
-// export async function getStaticProps() {
-//   const res = [
-//     await getData(HOME)
-//   ];
+export async function getStaticProps() {
+  const res = [
+    await getData(HOME)
+  ];
 
-//   return {
-//     props: {
-//       res: res
-//     }
-//   }
-// }
+  return {
+    props: {
+      res: res
+    }
+  }
+}
 
 export default function Home({res}) {
   return (
     <>
-    <div>Start</div>
-      {/* <div style={{ backgroundColor: "#1B2D82" }}>
-        <HomeBanner
-          titulo={res[0].homeBanners[0].title} texto={res[0].homeBanners[0].text} theme="ColorSM"
-        />
-
-        <ImagemFundo
-          imagem={res[0].assets[6].url}
-          chamada={res[0].homeBanners[1].title}
-          chamadacolor=""
-          subtexto={res[0].homeBanners[1].text}
-          cards={res[0].cards}
-          botao={
-            {
-              label: "",
-              url: ""
-            }
-          }
-        />
-        
+      <div style={{ backgroundColor: "#1B2D82" }}>
         <section id="sobre">
           <InfoTab contentList={[
             {
@@ -58,16 +39,7 @@ export default function Home({res}) {
             },
           ]} />
         </section>
-
-        <Parcerias
-          parceiros={[
-            { alt: "parceiros", src:  res[0].logos[2].logo.url },
-            { alt: "parceiros", src: res[0].logos[5].logo.url },
-            { alt: "parceiros", src: res[0].logos[4].logo.url }
-          ]}
-          theme="ColorAGP"
-        />
-      </div> */}
+      </div>
 
     </>
   )
