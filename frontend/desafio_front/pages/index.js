@@ -1,12 +1,14 @@
 import Head from "next/head";
 // import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
 import { InfoTab } from "@impulsogov/design-system";
+import Header from "../components/Header";
 
 export default function Home() {
   return (
     <>
-      <div style={{ backgroundColor: "#1B2D82" }}>
+      <div>
         <section id="sobre">
+          <Header />
           <InfoTab contentList={[
              {
               buttonLink: '/',
