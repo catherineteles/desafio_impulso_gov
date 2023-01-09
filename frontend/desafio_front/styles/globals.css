@@ -11,6 +11,36 @@ a {
   text-decoration: none;
 }
 
+header, footer {
+  background-color: #00BCD4;
+  height: 120px;
+}
+
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-button {
+  background-color: #00BCD4;
+  border: none;
+  color: #141919;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  margin: 48px;
+  line-height: 15px;
+  width: 37px;
+}
+
+.header-img, .footer-img {
+  height: 32px;
+  margin: 48px;
+  width: 64px;
+}
+
 * {
   box-sizing: border-box;
 }
