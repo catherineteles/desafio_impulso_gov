@@ -4,6 +4,7 @@ import { InfoTab } from "@impulsogov/design-system";
 import AppContext from "../context_api/AppContext";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const {
@@ -12,8 +13,8 @@ export default function Home() {
   return (
     <>
       <div>
+        <Header />
         <section id="sobre">
-          <Header />
           { clicked && <Modal />}
           <InfoTab contentList={[
              {
@@ -32,6 +33,7 @@ export default function Home() {
             }
           ]} />
         </section>
+        <Footer />
       </div>
 
     </>
