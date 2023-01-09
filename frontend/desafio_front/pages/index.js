@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
-import { InfoTab } from "@impulsogov/design-system";
+// import { ImagemFundo, HomeBanner, Parcerias } from "@impulsogov/design-system";
+// import { InfoTab } from "@impulsogov/design-system";
 
 // import { HOME } from "../querys/HOME";
 // import { getData } from "../services/getData";
@@ -20,7 +20,8 @@ import { InfoTab } from "@impulsogov/design-system";
 export default function Home({res}) {
   return (
     <>
-      <div style={{ backgroundColor: "#1B2D82" }}>
+    <div>Start</div>
+      {/* <div style={{ backgroundColor: "#1B2D82" }}>
         <HomeBanner
           titulo={res[0].homeBanners[0].title} texto={res[0].homeBanners[0].text} theme="ColorSM"
         />
@@ -66,7 +67,7 @@ export default function Home({res}) {
           ]}
           theme="ColorAGP"
         />
-      </div>
+      </div> */}
 
     </>
   )
