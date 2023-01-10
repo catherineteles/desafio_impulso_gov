@@ -12,11 +12,11 @@ export default function Home() {
   } = useContext(AppContext)
   return (
     <>
-      <div>
-        <Header />
+      <div className="home-page">
         <section id="sobre">
+          <Header />
           { clicked && <Modal />}
-          <InfoTab contentList={[
+          <InfoTab className="info-tab" contentList={[
              {
               buttonLink: '/',
               buttonTitle: 'SOBRE SAÚDE MENTAL',
@@ -32,8 +32,8 @@ export default function Home() {
               rightTitle: 'Entenda como interpretar os indicadores'
             }
           ]} />
+          <Footer />
         </section>
-        <Footer />
       </div>
 
     </>

@@ -21,10 +21,10 @@ export default function Modal() {
     return city.nome.toLowerCase().includes(searchInput.toLowerCase())
   }
   return (
-  <header>
-    <div className="modal-container">     
-      <button onClick={ handleClick }>X</button>
-      <div>
+  <div className="modal-container">
+    <div className="modal-box">     
+      <button className="modal-button" onClick={ handleClick }>X</button>
+      <div className="modal-search">
         <p>Escolha um município</p>
         <input onChange={ handleChange } />
         {searchInput !== "" && data.filter(handleFilter).map((city) => 
@@ -32,5 +32,5 @@ export default function Modal() {
         )}
       </div>
     </div>
-  </header>)
+  </div>)
 }
