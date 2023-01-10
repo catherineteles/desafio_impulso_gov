@@ -4,6 +4,7 @@ import { InfoTab } from "@impulsogov/design-system";
 import AppContext from "../context_api/AppContext";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const {
@@ -11,11 +12,11 @@ export default function Home() {
   } = useContext(AppContext)
   return (
     <>
-      <div>
+      <div className="home-page">
         <section id="sobre">
           <Header />
           { clicked && <Modal />}
-          <InfoTab contentList={[
+          <InfoTab className="info-tab" contentList={[
              {
               buttonLink: '/',
               buttonTitle: 'SOBRE SAÚDE MENTAL',
@@ -31,6 +32,7 @@ export default function Home() {
               rightTitle: 'Entenda como interpretar os indicadores'
             }
           ]} />
+          <Footer />
         </section>
       </div>
 
