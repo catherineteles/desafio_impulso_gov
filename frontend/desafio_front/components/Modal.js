@@ -23,10 +23,14 @@ export default function Modal() {
   return (
   <div className="modal-container">
     <div className="modal-box">     
-      <button className="modal-button" onClick={ handleClick }>X</button>
+      <button
+        className="modal-button" 
+        onClick={ handleClick }>
+          X
+      </button>
       <div className="modal-search">
         <p>Escolha um município</p>
-        <input onChange={ handleChange } />
+        <input onChange={ handleChange } placeholder="Fortaleza, CE" />
         {searchInput !== "" && data.filter(handleFilter).map((city) => 
           <ul>{`${city.nome}, ${city.uf}`}</ul>
         )}
