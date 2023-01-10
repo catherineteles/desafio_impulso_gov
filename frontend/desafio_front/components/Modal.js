@@ -32,7 +32,7 @@ export default function Modal() {
         <p>Escolha um município</p>
         <input onChange={ handleChange } placeholder="Fortaleza, CE" />
         {searchInput !== "" && data.filter(handleFilter).map((city) => 
-          <ul>{`${city.nome}, ${city.uf}`}</ul>
+          <li>{`${city.nome}, ${city.uf}`}</li>
         )}
       </div>
     </div>
